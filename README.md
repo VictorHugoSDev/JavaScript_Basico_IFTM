@@ -1,2 +1,15 @@
 # JavaScript Básico IFTM
-Repositório com os exercícios, provas e trabalhos realizados para a disciplina de JavaScript do 2º período do curso de Sistemas para Internet - IFTM Uberlândia Centro. Java.
+### Exercícios
+- [Lista 1 - HTML: Esqueleto de Página]
+- [Lista 2 Etapa 01 - HTML: Meta Tags]
+- [Lista 3 Etapa 02 - HTML: Meta Tags]
+
+### Provas
+- 
+
+
+### Projeto Final
+- 
+
+### Exercícios extras
+- 
