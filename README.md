@@ -1,8 +1,8 @@
 # JavaScript Básico IFTM
 ### Exercícios
-- [Lista 1 - HTML: Esqueleto de Página]
-- [Lista 2 Etapa 01 - HTML: Meta Tags]
-- [Lista 3 Etapa 02 - HTML: Meta Tags]
+- [Lista 1 - Caixas de Diálogo](https://victorhugosdev.github.io/JavaScript_Basico_IFTM/Exercicios/Lista%201/index.html)
+- [Lista 2 - Array, Estrutura condicional e de repetição](https://victorhugosdev.github.io/JavaScript_Basico_IFTM/Exercicios/Lista%202/index.html)
+- [Lista 3 - Array e números aleatórios](https://victorhugosdev.github.io/JavaScript_Basico_IFTM/Exercicios/Lista%203/index.html)
 
 ### Provas
 - 
