@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript"> 
+        var primeiroNome = prompt("Qual o seu nome primeiro?");
+        var sobrenome = prompt("Qual o seu sobrenome?");
+        var qtde = parseInt(prompt("Quantas vezes o nome deve aparecer"));
+        var cor = prompt("Qual a cor desejada?");
+
+        for (i=1; i<=qtde; i++) {
+            if(i % 2 === 0){
+                document.write(`<p style="color: ${cor};">${i} - ${primeiroNome.concat(" ", sobrenome)}</p>`);
+            }
+            else{
+                document.write(`<p>${i} - ${primeiroNome} ${sobrenome} </p>`);
+            }
+        }
+        </script> 
+    <title>Exercicio 1</title>
+</head>
+<body>
+    <a href="index.html">VOLTAR</a>
+</body>
+</html>
