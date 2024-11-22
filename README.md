@@ -6,6 +6,7 @@
 - [Lista 4 - Números aleatórios e Vetores](https://victorhugosdev.github.io/JavaScript_Basico_IFTM/Exercicios/Lista%204/index.html)
 - [Lista 5 - Strings](https://victorhugosdev.github.io/JavaScript_Basico_IFTM/Exercicios/Lista%205/index.html)
 - [Lista 6 - Manipuladores de Eventos](https://victorhugosdev.github.io/JavaScript_Basico_IFTM/Exercicios/Lista%206/index.html)
+- [Lista 7 - Armazenamento Local](https://victorhugosdev.github.io/JavaScript_Basico_IFTM/Exercicios/Lista%207/index.html)
 
 ### Provas
 - 
