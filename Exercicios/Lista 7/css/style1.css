@@ -1,0 +1,46 @@
+.boxBoy{
+    width: 240px;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes moveRightLeft {
+    0% {
+        transform: translateX(50px);
+    }
+    50% {
+        transform: translateX(-50px);
+    }
+    100% {
+        transform: translateX(50px);
+    }
+}
+
+.animateMove {
+    animation: moveRightLeft 1.0s ease-in-out infinite;
+}
+
+@keyframes shake {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    25% {
+        transform: translate(-10px, 5px) rotate(1deg);
+    }
+    50% {
+        transform: translate(5px, -10px) rotate(-1deg);
+    }
+    75% {
+        transform: translate(-10px, 5px) rotate(1deg);
+    }
+    100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+}
+
+.shake {
+    animation: shake 0.5s ease-in-out infinite;
+}
