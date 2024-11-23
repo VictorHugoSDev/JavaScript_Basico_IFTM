@@ -1,12 +1,31 @@
 var email = document.getElementById("txtUser");
-var pwd = document.getElementById("pwd");
-var msgErro = document.getElementById("msg");
+var pwd = document.getElementById("txtPwd");
+var btnLogin = document.getElementById("btnLogin");
 
-var usuario = window.localStorage.getItem("user");
-var senha = window.localStorage.getItem("pwd");
+btnLogin.addEventListener("click", function(){
+    if (email.value.trim() === "") {
+        alert("Por favor, insira um e-mail.");
+        return;
+    }
 
-if ((usuario != null) && (senha != null)) {
-    user.innerHTML = window.localStorage.getItem("user");
-    pwd.innerHTML = window.localStorage.getItem("pwd");
-}
-else document.getElementById("msg").innerHTML = "Não há usuários cadastrados"
+    if (pwd.value.trim() === "") {
+        alert("Por favor, insira uma senha.");
+        return;
+    }
+
+    if(!localStorage.getItem(email.value)){
+        alert("Usuário inexistente.Tente outro usuário.");
+        return;
+    }
+
+    var storagePassword = localStorage.getItem(email.value);
+    if(storagePassword != pwd.value){
+        alert("Usuário existente, porém senha inválida.")
+        return;
+    }
+
+    alert("Login realizado com sucesso.")
+    setTimeout(function(){
+        window.location.href = "ex1.html";
+    }, 1000);
+});
