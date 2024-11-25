@@ -3,20 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página index</title>
+    <title>Login</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h1>ARMAZENAMENTO LOCAL - LISTA DE EXERCÍCIOS</h1>
-    <div>
-        <h1>TAMAGOTCHI</h1>
-        <form>
-            <label>Email:</label>
-            <input type="email" id="txtUser" required>
-            <label>Senha:</label>
-            <input type="password" id="txtPwd">
-            <input type="button" value="login" id="btnLogin" required>
-        </form>
-        <p><a href="cadastrar.html">Cadastrar</a></p>
+    <h1>JAVASCRIPT - ARMAZENAMENTO LOCAL</h1>
+    <div class="container">
+        <div>
+            <h1>TAMAGOTCHI</h1>
+            <div class="formulario">
+                <form>
+                    <div class="inputLabel">
+                        <label>Email:</label>
+                        <input type="email" id="txtEmail">
+                    </div>
+                    <div class="inputLabel">
+                        <label>Senha:</label>
+                        <input type="password" id="txtPwd">
+                    </div>
+                    <input type="button" value="login" id="btnLogin" required>
+                </form>
+                <p><a href="cadastrar.html">Cadastrar</a></p>
+            </div>
+        </div>
     </div>
     <script src="js/script.js"></script>
 </body>
