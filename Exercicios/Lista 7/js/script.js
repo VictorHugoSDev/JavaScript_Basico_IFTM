@@ -1,4 +1,4 @@
-var email = document.getElementById("txtUser");
+var email = document.getElementById("txtEmail");
 var pwd = document.getElementById("txtPwd");
 var btnLogin = document.getElementById("btnLogin");
 
@@ -25,7 +25,6 @@ btnLogin.addEventListener("click", function(){
     }
 
     alert("Login realizado com sucesso.")
-    setTimeout(function(){
-        window.location.href = "ex1.html";
-    }, 1000);
+    
+    window.location.href = "ex1.html";
 });
