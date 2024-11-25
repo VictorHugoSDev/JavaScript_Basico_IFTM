@@ -33,12 +33,11 @@ btnCadastrar.addEventListener("click", function () {
         window.localStorage.setItem(email.value, pwd.value);
 
         alert("Cadastrado com sucesso!");
-        setTimeout(function(){
-            window.location.href = "index.html";
-        }, 1000);
+        
+        window.location.href = "index.html";
+
     }
     else {
         alert("Atualize o seu navegador. Não é possível cadastrar.");
     }
-
 });
