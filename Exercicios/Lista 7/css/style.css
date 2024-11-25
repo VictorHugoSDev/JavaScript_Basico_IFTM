@@ -1,0 +1,87 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    background-color: #f0f0f0;
+    height: 100vh;
+}
+
+/* Estilo para o título superior */
+h1:first-of-type {
+    margin: 20px;
+    text-align: left;
+}
+
+/* Estilo para o container */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    padding: 20px;
+    width: 500px;
+    margin: auto;
+}
+
+/* Estilo para a div que contém o formulário */
+.container > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilo para o formulário */
+.formulario {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+/* Estilo para os campos de input e botões */
+input[type="email"],
+input[type="password"],
+input[type="button"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+}
+
+/* Estilo para o botão */
+input[type="button"] {
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 12px;
+    transition: background-color 0.3s ease;;
+    width: 80%;
+}
+
+input[type="button"]:hover {
+    background-color: #0056b3;
+    color: azure;
+}
+
+/* Estilo para a as labels */
+.inputLabel {
+    text-align: left;
+}
+
+/* Estilo para o link */
+a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+a:hover {
+    text-decoration: underline;
+}
