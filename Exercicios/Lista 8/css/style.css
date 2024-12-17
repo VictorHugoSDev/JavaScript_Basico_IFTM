@@ -5,26 +5,30 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
 h1 {
-    text-align: center;
     text-shadow: 0.3px 0.3px 0.6px yellow, -0.3px -0.3px 0.6px yellow,
         0.3px -0.3px 0.6px yellow, -0.3px 0.3px 0.6px yellow;
-    padding-bottom: 20px;
+    margin-bottom: 40px;
 }
 
 p {
-    text-align: center;
     color: red;
+    padding-bottom: 20px;
+    width: 100%;
+    max-width: 510px;
+    text-align: left;
+    margin: 0 auto 10px;
 }
 
 span {
     color: red;
-}
-
-.textForm {
-    display: flex;
-    justify-content: center;
-    margin: auto;
 }
 
 form {
@@ -32,7 +36,7 @@ form {
     flex-direction: column;
     gap: 10px;
     width: 100%;
-    max-width: 500px;
+    max-width: 480px;
 }
 
 label {
@@ -44,8 +48,6 @@ input[type="text"],
 select {
     width: 100%;
     padding: 10px;
-    margin-bottom: 15px;
-    border-radius: 2px;
 }
 
 .idadeSelecao {
@@ -53,16 +55,11 @@ select {
     gap: 20px;
 }
 
-.idadeSelecao div {
-    display: flex;
-    flex-direction: column;
+.divIdade {
+    width: 40%;
 }
 
-.divIdade{
-    width: 30%;
-}
-
-.divPassa{
+.divPassa {
     width: 100%;
     padding-left: 20px;
 }

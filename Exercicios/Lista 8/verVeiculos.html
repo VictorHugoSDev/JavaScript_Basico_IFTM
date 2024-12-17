@@ -7,23 +7,24 @@
     <link rel="stylesheet" href="css/style3.css">
 </head>
 <body>
-    <h1><span>XXXXX</span>, veja as opções para o seu perfil:</h1>
+    <h1><span id="nomeUsuario">XXXXX</span>, veja as opções para o seu perfil:</h1>
 
     <div class="container">
-        <img src="img/civic.jpg" alt="">
+        <img id="carroImg" src="img/civic.jpg" alt="Veículo">
+
         <div class="caracteristicas">
             <p>Características do veículo:</p>
             <ul>
-                <li>Fabricante: <span></span></li>
-                <li>Nome: <span></span></li>
-                <li>Potênciado motor: <span></span></li>
-                <li>Garantia: <span></span></li>
-                <li>Consumo (cidade): <span></span></li>
+                <li>Fabricante: <span id="fabricante"></span></li>
+                <li>Nome: <span id="nomeVeiculo"></span></li>
+                <li>Potência do motor: <span id="potencia"></span></li>
+                <li>Garantia: <span id="garantia"></span></li>
+                <li>Consumo (cidade): <span id="consumo"></span></li>
             </ul>
-            <input type="button" value="Mudar perfil">
+            <input type="button" value="Mudar perfil" id="btnPerfil">
         </div>
     </div>
     
-    <script src="js/script.js"></script>
+    <script src="js/script3.js"></script>
 </body>
 </html>
