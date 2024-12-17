@@ -1,0 +1,90 @@
+body {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    text-align: center;
+    text-shadow: 0.3px 0.3px 0.6px yellow, -0.3px -0.3px 0.6px yellow,
+        0.3px -0.3px 0.6px yellow, -0.3px 0.3px 0.6px yellow;
+    padding-bottom: 20px;
+}
+
+p {
+    text-align: center;
+    color: red;
+}
+
+span {
+    color: red;
+}
+
+.textForm {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    max-width: 500px;
+}
+
+label {
+    color: #000292;
+    font-weight: bold;
+}
+
+input[type="text"],
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 2px;
+}
+
+.idadeSelecao {
+    display: flex;
+    gap: 20px;
+}
+
+.idadeSelecao div {
+    display: flex;
+    flex-direction: column;
+}
+
+.divIdade{
+    width: 30%;
+}
+
+.divPassa{
+    width: 100%;
+    padding-left: 20px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.buttons input {
+    width: 45%;
+    padding: 10px 30px;
+    cursor: pointer;
+    background-color: black;
+    color: white;
+    border: none;
+    text-align: center;
+    border-radius: 4px;
+}
+
+.buttons input:hover {
+    transform: scale(0.95);
+}
