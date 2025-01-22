@@ -89,3 +89,8 @@ form {
     display: flex;
     flex-direction: column;
 }
+
+hr {
+    margin: 20px 0;
+    border: 1px solid black;
+}
