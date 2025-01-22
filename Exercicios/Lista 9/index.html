@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 09</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <form>
+        <label for="txtInfoA">Números binários</label>
+        <input type="text" id="txtInfoA" value="01">
+        <button type="button" id="btnValidarA">Validar A</button>
+        
+        <label for="txtInfoB">Números hexadecimais</label>
+        <input type="text" id="txtInfoB" value="0x1A3F">
+        <button type="button" id="btnValidarB">Validar B</button>
+        
+        <label for="txtInfoC">Números decimais</label>
+        <input type="text" id="txtInfoC" value="-0.456">
+        <button type="button" id="btnValidarC">Validar C</button>
+
+        <label for="txtInfoD">Números reais (pode haver casas decimais).</label>
+        <input type="text" id="txtInfoD" value="3.14">
+        <button type="button" id="btnValidarD">Validar D</button>
+        
+        <label for="txtInfoE">Horário no formato: 00:00:00</label>
+        <input type="text" id="txtInfoE" value="23:54:10">
+        <button type="button" id="btnValidarE">Validar E</button>
+        
+        <label for="txtInfoF">Data de nascimento: dd/mm/aaaa ou dd/mm/aa</label>
+        <input type="text" id="txtInfoF" value="01/01/1900">
+        <button type="button" id="btnValidarF">Validar F</button>
+        
+        <label for="txtInfoG">CEP</label>
+        <input type="text" id="txtInfoG" value="38400-000">
+        <button type="button" id="btnValidarG">Validar G</button>
+        
+        <label for="txtInfoH">CPF</label>
+        <input type="text" id="txtInfoH" value="120.020.200-20">
+        <button type="button" id="btnValidarH">Validar H</button>
+        
+        <label for="txtInfoI">CNPJ</label>
+        <input type="text" id="txtInfoI" value="12.000.200/0000-02">
+        <button type="button" id="btnValidarI">Validar I</button>
+        
+        <label for="txtInfoJ">Números entre parênteses</label>
+        <input type="text" id="txtInfoJ" value="(4902)">
+        <button type="button" id="btnValidarJ">Validar J</button>
+        
+        <label for="txtInfoK">E-mail</label>
+        <input type="text" id="txtInfoK" value="xxx@yyy.ccc">
+        <button type="button" id="btnValidarK">Validar K</button>
+        
+        <label for="txtInfoL">Endereço (domínio ou IPv4)</label>
+        <input type="text" id="txtInfoL" value="255.255.255.255">
+        <button type="button" id="btnValidarL">Validar L</button>
+        
+        <label for="txtInfoM">Altura de uma pessoa</label>
+        <input type="text" id="txtInfoM" value="1.82">
+        <button type="button" id="btnValidarM">Validar M</button>
+        
+        <label for="txtInfoN">Nome próprio</label>
+        <input type="text" id="txtInfoN" value="Victor">
+        <button type="button" id="btnValidarN">Validar N</button>
+        
+        <label for="txtInfoO">Telefone no padrão internacional</label>
+        <input type="text" id="txtInfoO" value="+55(34)99999-9999">
+        <button type="button" id="btnValidarO">Validar O</button>
+        
+        <label for="txtInfoP">Texto</label>
+        <input type="text" id="txtInfoP" value="IFTM campus Uberlândia Centro">
+        <button type="button" id="btnValidarP">Validar P</button>
+        
+        <label for="txtInfoQ">Números de 1 a 100</label>
+        <input type="text" id="txtInfoQ" value="76.3">
+        <button type="button" id="btnValidarQ">Validar Q</button>
+        
+        <label for="txtInfoR">Placa de carro (padrão Mercosul)</label>
+        <input type="text" id="txtInfoR" value="LTZ-9L24">
+        <button type="button" id="btnValidarR">Validar R</button>
+        
+        <label for="txtInfoS">Palavras contendo vogais e/ou algumas dessas letras: “b”, “c”, “d”</label>
+        <input type="text" id="txtInfoS" value="dado">
+        <button type="button" id="btnValidarS">Validar S</button>
+        
+        <label for="txtInfoT">O faturamento de uma empresa. O valor poderá variar de R$0,00 até R$999.999.999.999,99 (999 bilhões de reais)</label>
+        <input type="text" id="txtInfoT" value="R$5.601.478,10">
+        <button type="button" id="btnValidarT">Validar T</button>
+        
+        <label for="txtInfoU">Número de matrícula: IFTM-xxx/xxx-yy ou iftm-xxx/xxx-yy (Onde x é um dígito e y um caracter alfanumérico)</label>
+        <input type="text" id="txtInfoU" value="IFTM-123/456-ab">
+        <button type="button" id="btnValidarU">Validar U</button>
+        
+        <label for="txtInfoV">Número de matrícula. Único formato permitido: MT-xx.xxx-IFTM</label>
+        <input type="text" id="txtInfoV" value="MT-99.123-ifTm">
+        <button type="button" id="btnValidarV">Validar V</button>
+        
+        <label for="txtInfoW">Número de matrícula. Único formato permitido: MT-xx.xxx-IFTM Y</label>
+        <input type="text" id="txtInfoW" value="MT-12.345-IFTM Uberlândia">
+        <button type="button" id="btnValidarW">Validar W</button>
+    </form>
+
+    <script src="script/script.js"></script>
+</body>
+</html>
