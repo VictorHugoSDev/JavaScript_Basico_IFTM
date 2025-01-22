@@ -84,7 +84,7 @@ window.addEventListener("DOMContentLoaded", function(){
     });
 
     // g) CEP
-    var padraoG = /^$/;
+    var padraoG = /^\d{5}-?\d{3}$/;
 
     var txtInfoG = document.getElementById("txtInfoG");
     var btnValidarG = document.getElementById("btnValidarG");
@@ -98,7 +98,7 @@ window.addEventListener("DOMContentLoaded", function(){
     });
 
     // h) CPF
-    var padraoH = /^$/;
+    var padraoH = /^(\d{3}\.?\d{3}\.?\d{3})-?\d{2}$/;
 
     var txtInfoH = document.getElementById("txtInfoH");
     var btnValidarH = document.getElementById("btnValidarH");
@@ -113,7 +113,7 @@ window.addEventListener("DOMContentLoaded", function(){
 
 
     // i) CNPJ 
-    var padraoI = /^$/;
+    var padraoI = /^(\d{2}\.?\d{3}\.?\d{3})\/?\d{4}-?\d{2}$/;
 
     
     var txtInfoI = document.getElementById("txtInfoI");
@@ -128,7 +128,7 @@ window.addEventListener("DOMContentLoaded", function(){
     });
 
     // j) Números entre parênteses
-    var padraoJ = /^$/;
+    var padraoJ = /^\(\s*\d+\s*\)$/;
 
     var txtInfoJ = document.getElementById("txtInfoJ");
     var btnValidarJ = document.getElementById("btnValidarJ");
@@ -142,7 +142,7 @@ window.addEventListener("DOMContentLoaded", function(){
     });
 
     // k) Email. Padrão esperado: xxx@yyy.ccc (c: poderá ter de 2 a 3 caracteres)
-    var padraoK = /^$/;
+    var padraoK = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,3}$/;
 
     var txtInfoK = document.getElementById("txtInfoK");
     var btnValidarK = document.getElementById("btnValidarK");
@@ -156,7 +156,7 @@ window.addEventListener("DOMContentLoaded", function(){
     });
 
     // l) Endereço (domínio ou IPv4). Ex: 192.168.1.1, 255.255.255.255 (somente nros)
-    var padraoL = /^$/;
+    var padraoL = /^((1?\d{1,2}|2([0-4]\d|5[0-5]))\.){3}(1?\d{1,2}|2([0-4]\d|5[0-5]))$|^$/;
 
     var txtInfoL = document.getElementById("txtInfoL");
     var btnValidarL = document.getElementById("btnValidarL");
@@ -170,7 +170,7 @@ window.addEventListener("DOMContentLoaded", function(){
     });
 
     // m) Altura de uma pessoa. Ex: x,xz ou x.xz (onde z é opcional)
-    var padraoM = /^$/;
+    var padraoM = /^\d{1}[\.,]{1}\d{0,2}$/;
 
     var txtInfoM = document.getElementById("txtInfoM");
     var btnValidarM = document.getElementById("btnValidarM");
@@ -184,7 +184,7 @@ window.addEventListener("DOMContentLoaded", function(){
     });
 
     // n) Nome próprio (letra inicial maiúscula e demais minúsculas). Ex: Wilton
-    var padraoN = /^$/;
+    var padraoN = /^[A-Z][a-z]+(\s[A-Z][a-z]+)*$/;
 
     var txtInfoN = document.getElementById("txtInfoN");
     var btnValidarN = document.getElementById("btnValidarN");
@@ -198,7 +198,7 @@ window.addEventListener("DOMContentLoaded", function(){
     });
 
     // o) Telefone no padrão internacional. Ex: +xx(xx)xxxxx-xxxx
-    var padraoO = /^$/;
+    var padraoO = /^\+\d{1,3}\(\d{2,3}\)\d{3,5}-\d{4}$/;
 
     var txtInfoO = document.getElementById("txtInfoO");
     var btnValidarO = document.getElementById("btnValidarO");
@@ -212,7 +212,7 @@ window.addEventListener("DOMContentLoaded", function(){
     });
 
     // p) Texto: “IFTM campus Uberlândia” ou “IFTM campus Uberlândia Centro”
-    var padraoP = /^$/;
+    var padraoP = /^IFTM campus Uberlândia( Centro)?$/;
     
     var txtInfoP = document.getElementById("txtInfoP");
     var btnValidarP = document.getElementById("btnValidarP");
@@ -226,7 +226,7 @@ window.addEventListener("DOMContentLoaded", function(){
     });
 
     // q) Números de 1 a 100
-    var padraoQ = /^$/;
+    var padraoQ = /^(100|[1-9]|\d{2})$/;
 
     var txtInfoQ = document.getElementById("txtInfoQ");
     var btnValidarQ = document.getElementById("btnValidarQ");
