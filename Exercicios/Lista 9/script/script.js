@@ -240,7 +240,7 @@ window.addEventListener("DOMContentLoaded", function(){
     });
 
     // r) Placa de carro (padrão Mercosul) quatro letras e três números (LLL-NLNN)
-    var padraoR = /^$/;
+    var padraoR = /^[A-Z]{3}-\d{1}[A-Z]{1}\d{2}$/;
 
     var txtInfoR = document.getElementById("txtInfoR");
     var btnValidarR = document.getElementById("btnValidarR");
@@ -254,7 +254,7 @@ window.addEventListener("DOMContentLoaded", function(){
     });
 
     // s) Palavras contendo vogais e/ou algumas dessas letras: “b”, “c”, “d”. Ex:“dado”, “caco”
-    var padraoS = /^$/;
+    var padraoS = /^(?=.*[aeiou])(?=.*[bcd])[a-zA-Z]*$/;
 
     var txtInfoS = document.getElementById("txtInfoS");
     var btnValidarS = document.getElementById("btnValidarS");
@@ -269,7 +269,7 @@ window.addEventListener("DOMContentLoaded", function(){
 
     /* t) O faturamento de uma empresa. O valor poderá variar de R$0,00 até R$999.999.999.999,99 (999 bilhões de reais). 
     Exemplos válidos: R$400,8; R$400,85; R$1.500,41; R$1.500,7; R$5.601.478,10; R$10.524.478.967,70 */
-    var padraoT = /^$/;
+    var padraoT = /^R\$(0|[1-9]{1}\d{0,2}(\.\d{3}){0,3})(,\d{1,2})?$/;
 
     var txtInfoT = document.getElementById("txtInfoT");
     var btnValidarT = document.getElementById("btnValidarT");
