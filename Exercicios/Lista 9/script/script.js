@@ -283,7 +283,7 @@ window.addEventListener("DOMContentLoaded", function(){
     });
 
     // u) Número de matrícula: IFTM-xxx/xxx-yy ou iftm-xxx/xxx-yy. Onde x é um dígito e y um caracter alfanumérico
-    var padraoU = /^$/;
+    var padraoU = /^iftm-\d{3}\/\d{3}-\w{2}$/i;
 
     var txtInfoU = document.getElementById("txtInfoU");
     var btnValidarU = document.getElementById("btnValidarU");
@@ -298,7 +298,7 @@ window.addEventListener("DOMContentLoaded", function(){
 
     /* v) Número de matrícula. Único formato permitido: MT-xx.xxx-IFTM. 
     Onde x deverá um dígito, as letras MT deverão ser maiúsculas e as letras IFTM poderão ser tanto maiúsculas quanto minúsculas. */
-    var padraoV = /^$/;
+    var padraoV = /^MT-\d{2}\.\d{3}-[iI][fF][tT][mM]$/;
 
     var txtInfoV = document.getElementById("txtInfoV");
     var btnValidarV = document.getElementById("btnValidarV");
@@ -315,7 +315,7 @@ window.addEventListener("DOMContentLoaded", function(){
     Onde x é um dígito, as letras do padrão poderão ser tanto maiúsculas quanto minúsculas e entre as letras poderá haver 
     no máximo um espaço em branco (ou seja, pode ser que não tenha nenhum) e Y é o nome de um dos seguintes campi 
     UBERLÂNDIA CENTRO ou UBERLÂNDIA (A primeira letra do nome/sobrenome de cada campus deve ser maiúscula e as demais minúsculas). */
-    var padraoW = /^$/;
+    var padraoW = /^[mM][tT]-\d{2}\.\d{3}-[iI][fF][tT][mM]\s?(Uberlândia|Uberlândia Centro)$/;
 
     var txtInfoW = document.getElementById("txtInfoW");
     var btnValidarW = document.getElementById("btnValidarW");
