@@ -9,6 +9,7 @@
 - [Lista 7 - Armazenamento Local](https://victorhugosdev.github.io/JavaScript_Basico_IFTM/Exercicios/Lista%207/index.html)
 - [Lista 8 - Simulado Prova](https://victorhugosdev.github.io/JavaScript_Basico_IFTM/Exercicios/Lista%208/index.html)
 - [Lista 9 - Expressões Regulares](https://victorhugosdev.github.io/JavaScript_Basico_IFTM/Exercicios/Lista%209/index.html)
+- [Lista 10 - Jogo em JS](https://victorhugosdev.github.io/JavaScript_Basico_IFTM/Exercicios/Lista%210/index.html)
 
 ### Provas
 - 
