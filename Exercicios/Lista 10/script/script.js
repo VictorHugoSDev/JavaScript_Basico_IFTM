@@ -10,7 +10,6 @@ window.addEventListener("DOMContentLoaded", function() {
     var erros = document.getElementById("erros");
     var pares = document.getElementById("pares");
 
-    var tempo = 0;
     var intervaloNumero;
     var intervaloTempo;
     var tempoRestante;
@@ -19,20 +18,24 @@ window.addEventListener("DOMContentLoaded", function() {
     var paresSorteados = 0;
     var contagemAcertos = 0;
     var contagemErros = 0;
+    var tempoNivel = 0;
 
     nivel.addEventListener("change", function() {
         switch (nivel.value) {
             case "facil":
                 tempoInicial = 105;
                 btnIniciar.disabled = false;
+                tempoNivel = 1000;
                 break;
             case "medio":
                 tempoInicial = 75;
                 btnIniciar.disabled = false;
+                tempoNivel = 500;
                 break;
             case "dificil":
                 tempoInicial = 45;
                 btnIniciar.disabled = false;
+                tempoNivel = 300;
                 break;
             default:
                 tempoInicial = 0;
@@ -56,12 +59,14 @@ window.addEventListener("DOMContentLoaded", function() {
             var numero = gerarNumero();
             numeroSorteado.innerText = numero;
 
+            numeroSorteado.dataset.clicado = "false";
+
             if (numero % 2 === 0) {
                 paresSorteados++;
                 pares.textContent = paresSorteados;
                 atualizarPercentualAcertos();
             }
-        }, 1000);
+        }, tempoNivel);
 
         intervaloTempo = setInterval(() => {
             tempoRestante--;
@@ -84,6 +89,13 @@ window.addEventListener("DOMContentLoaded", function() {
         if (isNaN(numero)) { 
             return;
         }
+
+        if (numeroSorteado.dataset.clicado === "true") {
+            return;
+        }
+
+        numeroSorteado.dataset.clicado = "true";
+
 
         if (numero % 2 === 0) {
             contagemAcertos++;
