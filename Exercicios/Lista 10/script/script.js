@@ -53,6 +53,7 @@ window.addEventListener("DOMContentLoaded", function() {
         btnIniciar.disabled = true;
         btnPausar.disabled = false;
         nivel.disabled = true;
+        btnParar.disabled = false;
 
         intervaloNumero = setInterval(() => {
             numeroSorteado.style.color = "#004d40";
