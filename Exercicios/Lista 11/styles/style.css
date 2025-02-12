@@ -1,0 +1,223 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Audiowide", serif;
+    font-weight: 400;
+    font-style: normal;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: space-between;
+    background-color: #212121;
+    font-size: 24px;
+    color: white;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #004d40;
+    border-radius: 0px 0px 10px 10px;
+}
+
+header div {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+header div p {
+    color: white;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+header label {
+    color: white;
+    padding: 15px;
+}
+
+select, button {
+    padding: 12px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    margin-right: 10px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+select {
+    background-color: #00796b;
+    border: 2px solid #80deea;
+    color: white;
+}
+
+select:focus {
+    outline: none;
+}
+
+button {
+    background-color: #00796b;
+    color: white;
+    border: 1px solid #80deea;
+}
+
+button:hover {
+    background-color: #004d40;
+    border: 1px solid #004d40;
+}
+
+button:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #00796b;
+    border-radius: 10px 10px 0px 0px;
+}
+
+footer div {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+footer div p {
+    color: white;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    text-align: center;
+    background: linear-gradient(145deg, #004d40, #00796b);
+    border-radius: 15px;
+    margin: 10px;
+}
+
+main span {
+    font-size: 200px;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.login-container, .cadastro-container {
+    background: linear-gradient(145deg, #333333, #00796b);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    width: 320px;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.login-container h2, .cadastro-container h2 {
+    font-size: 28px;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.login-container input, .cadastro-container input {
+    padding: 12px;
+    margin: 10px 0;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    border-radius: 8px;
+    border: 1px solid #00796b;
+    font-size: 18px;
+    background-color: #212121;
+    color: #fff;
+}
+
+.login-container button, .cadastro-container button {
+    padding: 12px 20px;
+    background-color: #00796b;
+    color: white;
+    border: 1px solid #80deea;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.login-container button:hover, .cadastro-container button:hover {
+    background-color: #004d40;
+}
+
+.login-container a, .cadastro-container a {
+    color: #80deea;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.login-container a:hover, .cadastro-container a:hover {
+    text-decoration: underline;
+}
+
+button i {
+    font-size: 24px;
+    color: white;
+}
+
+#btnMenu a {
+    text-decoration: none;
+    color: white;
+}
+
+button:hover i {
+    color: #80deea;
+}
+
+button:disabled i {
+    color: #b0bec5;
+}
+
+#loginError {
+    font-size: 16px;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    background-color: #ffebee;
+    border: 1px solid #f44336;
+    color: #f44336;
+}
+
+#cadastroError{
+    font-size: 16px;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    background-color: #ffebee;
+    border: 1px solid #f44336;
+    color: #f44336;
+}
+
+#cadastroError.sucesso {
+    color: #004d40;
+    background-color: #80deea;
+    border: 1px solid #004d40;
+    font-size: 16px;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    display: block;
+}

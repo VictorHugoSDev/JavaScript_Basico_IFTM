@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Par ou Ímpar?</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Bungee&family=Play:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div>
+            <label for="nivel">Nível: </label>
+            <select name="nivel" id="nivel">
+                <option value="selecione" selected disabled>Selecione</option>
+                <option value="facil">Fácil</option>
+                <option value="medio">Médio</option>
+                <option value="dificil">Difícil</option>
+            </select>
+        </div>
+
+        <div>
+            <p>Tempo: <span id="tempoJogo">00:00</span></p>
+        </div>
+        
+        <div>
+            <button id="btnIniciar" disabled><i class="fas fa-play"></i></button>
+            <button id="btnPausar" disabled><i class="fas fa-pause"></i></button>
+            <button id="btnParar" disabled><i class="fas fa-stop"></i></button>
+            <button id="btnMenu" onclick="window.location.href='index.html';"><i class="fas fa-home"></i></button>
+        </div>
+    </header>
+
+    <main>
+        <span id="numeroSorteado">-</span>
+    </main>
+
+    <footer>
+        <div>
+            <p>Acertos: <span id="acertos">0</span> (<span id="percentualAcertos">0.0%</span>)</p>
+        </div>
+        <div>
+            <p>Erros: <span id="erros">0</span></p>
+        </div>
+        <div>
+            <p>Números pares sorteados: <span id="pares">0</span></p>
+        </div>
+    </footer>
+
+    <script src="script/scriptJogo.js"></script>
+</body>
+</html>
