@@ -1,6 +1,8 @@
 window.addEventListener("DOMContentLoaded", () => {
     var loginForm = document.getElementById("loginForm");
     var loginError = document.getElementById("loginError");
+    var somSucesso = document.getElementById("somSucesso");
+    var somErro = document.getElementById("somErro");
 
     loginForm.addEventListener("submit", (e) => {
         e.preventDefault();
@@ -14,6 +16,10 @@ window.addEventListener("DOMContentLoaded", () => {
         if (!usuario || !senha) {
             loginError.textContent = "Por favor, preencha todos os campos.";
             loginError.style.display = "block";
+            if (!somErro.paused) {
+                somErro.currentTime = 0;
+            }
+            somErro.play();
             return;
         }
 
@@ -24,17 +30,32 @@ window.addEventListener("DOMContentLoaded", () => {
         if (!usuarioEncontrado) {
             loginError.textContent = "Usuário não encontrado. Cadastra-se.";
             loginError.style.display = "block";
+            if (!somErro.paused) {
+                somErro.currentTime = 0;
+            }
+            somErro.play();
             return;
         }
 
         if (usuarioEncontrado.senha !== senha) {
             loginError.textContent = "Senha incorreta. Tente novamente.";
             loginError.style.display = "block";
+            if (!somErro.paused) {
+                somErro.currentTime = 0;
+            }
+            somErro.play();
             return;
         }
 
+        if (!somSucesso.paused) {
+            somSucesso.currentTime = 0;
+        }
+        somSucesso.play();
+
         localStorage.setItem("usuarioLogado", usuario);
 
-        window.location.href = "jogo.html";
+        setTimeout(() => {
+            window.location.href = "jogo.html";
+        }, 1000);
     });
 });

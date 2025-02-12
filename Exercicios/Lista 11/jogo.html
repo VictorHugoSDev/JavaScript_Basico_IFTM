@@ -30,7 +30,7 @@
             <button id="btnIniciar" disabled><i class="fas fa-play"></i></button>
             <button id="btnPausar" disabled><i class="fas fa-pause"></i></button>
             <button id="btnParar" disabled><i class="fas fa-stop"></i></button>
-            <button id="btnMenu" onclick="window.location.href='index.html';"><i class="fas fa-home"></i></button>
+            <button id="btnMenu"><i class="fas fa-home"></i></button>
             <button id="btnRegras"><i class="fas fa-file-alt"></i></button>
             <button id="btnClassificacao"><i class="fas fa-trophy"></i></button>
         </div>
@@ -51,6 +51,15 @@
             <p>Números pares sorteados: <span id="pares">0</span></p>
         </div>
     </footer>
+
+    <audio id="somMenu" src="sounds/notification-for-game-scenes-132473.mp3" preload="auto"></audio>
+    <audio id="somVoltar" src="sounds/arcade-ui-4-229502.mp3" preload="auto"></audio>
+    <audio id="somPlay" src="sounds/game-start-6104.mp3" preload="auto"></audio>
+    <audio id="somPausar" src="sounds/notification-sound-269266.mp3" preload="auto"></audio>
+    <audio id="somParar" src="sounds/arcade-ui-5-229504.mp3" preload="auto"></audio>
+    <audio id="somAcerto" src="sounds/collect-points-190037.mp3" preload="auto"></audio>
+    <audio id="somErro" src="sounds/buzzer-4-183895.mp3" preload="auto"></audio>
+    <audio id="fimDeJogo" src="sounds/marimba-lose-250960.mp3" preload="auto"></audio>
 
     <script src="script/scriptJogo.js"></script>
 </body>

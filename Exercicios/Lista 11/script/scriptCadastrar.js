@@ -1,6 +1,8 @@
 window.addEventListener("DOMContentLoaded", function() {
     var cadastroForm = document.getElementById("cadastroForm");
     var cadastroError = document.getElementById("cadastroError");
+    var somSucesso = document.getElementById("somSucesso");
+    var somErro = document.getElementById("somErro");
 
     cadastroForm.addEventListener('submit', (e) => {
         e.preventDefault();
@@ -15,12 +17,20 @@ window.addEventListener("DOMContentLoaded", function() {
         if (!usuario || !senha || !confirmarSenha) {
             cadastroError.textContent = "Por favor, preencha todos os campos.";
             cadastroError.style.display = "block";
+            if (!somErro.paused) {
+                somErro.currentTime = 0;
+            }
+            somErro.play();
             return;
         }
 
         if (senha !== confirmarSenha) {
             cadastroError.textContent = "As senhas não coincidem. Por favor, verifique.";
             cadastroError.style.display = "block";
+            if (!somErro.paused) {
+                somErro.currentTime = 0;
+            }
+            somErro.play();
             return;
         }
 
@@ -29,6 +39,10 @@ window.addEventListener("DOMContentLoaded", function() {
         if (usuarios.some(u => u.usuario === usuario)) {
             cadastroError.textContent = "Este usuário já está cadastrado!";
             cadastroError.style.display = "block";
+            if (!somErro.paused) {
+                somErro.currentTime = 0;
+            }
+            somErro.play();
         } else {
             usuarios.push({ usuario: usuario, senha: senha });
             localStorage.setItem("usuarios", JSON.stringify(usuarios));
@@ -37,9 +51,14 @@ window.addEventListener("DOMContentLoaded", function() {
             cadastroError.classList.add("sucesso");
             cadastroError.style.display = "block";
 
+            if (!somSucesso.paused) {
+                somSucesso.currentTime = 0;
+            }
+            somSucesso.play();
+
             setTimeout(() => {
                 window.location.href = "index.html";
-            }, 1000);
+            }, 1500);
         }
     });
 });

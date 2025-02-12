@@ -4,6 +4,7 @@ window.addEventListener("DOMContentLoaded", function() {
     var btnIniciar = document.getElementById("btnIniciar");
     var btnPausar = document.getElementById("btnPausar");
     var btnParar = document.getElementById("btnParar");
+    var btnMenu = document.getElementById("btnMenu");
     var numeroSorteado = document.getElementById("numeroSorteado");
     var acertos = document.getElementById("acertos");
     var percentualAcertos = document.getElementById("percentualAcertos");
@@ -11,6 +12,14 @@ window.addEventListener("DOMContentLoaded", function() {
     var pares = document.getElementById("pares");
     var btnRegras = document.getElementById("btnRegras");
     var btnClassificacao = document.getElementById("btnClassificacao");
+    var somMenu = document.getElementById("somMenu");
+    var somVoltar = document.getElementById("somVoltar");
+    var somPlay = document.getElementById("somPlay");
+    var somPausar = document.getElementById("somPausar");
+    var somParar = document.getElementById("somParar");
+    var somAcerto = document.getElementById("somAcerto");
+    var somErro = document.getElementById("somErro");
+    var fimDeJogo = document.getElementById("fimDeJogo");
 
     var intervaloNumero;
     var intervaloTempo;
@@ -29,6 +38,16 @@ window.addEventListener("DOMContentLoaded", function() {
         window.location.href = "index.html";
     }
 
+    btnMenu.addEventListener("click", function() {
+        if (!somVoltar.paused) {
+            somVoltar.currentTime = 0;
+        }
+        somVoltar.play();
+        setTimeout(() => {
+            window.location.href = 'index.html';
+        }, 1000);
+    });
+
     nivel.addEventListener("change", function() {
         contagemAcertos = 0;
         contagemErros = 0;
@@ -40,17 +59,29 @@ window.addEventListener("DOMContentLoaded", function() {
 
         switch (nivel.value) {
             case "facil":
+                if (!somMenu.paused) {
+                    somMenu.currentTime = 0;
+                }
+                somMenu.play();
                 tempoInicial = 105;
                 btnIniciar.disabled = false;
                 tempoNivel = 1000;
                 break;
             case "medio":
+                if (!somMenu.paused) {
+                    somMenu.currentTime = 0;
+                }
+                somMenu.play();
                 tempoInicial = 75;
                 btnIniciar.disabled = false;
                 tempoNivel = 700;
                 break;
             case "dificil":
-                tempoInicial = 45;
+                if (!somMenu.paused) {
+                    somMenu.currentTime = 0;
+                }
+                somMenu.play();
+                tempoInicial = 5;
                 btnIniciar.disabled = false;
                 tempoNivel = 500;
                 break;
@@ -61,6 +92,11 @@ window.addEventListener("DOMContentLoaded", function() {
     });
 
     btnIniciar.addEventListener("click", function() {
+        if (!somPlay.paused) {
+            somPlay.currentTime = 0;
+        }
+        somPlay.play();
+
         if (jogoPausado) {
             jogoPausado = false;
         } else {
@@ -93,16 +129,21 @@ window.addEventListener("DOMContentLoaded", function() {
             tempoJogo.textContent = formatarTempo(tempoRestante);
 
             if (tempoRestante <= 0) {
+                if (!fimDeJogo.paused) {
+                    fimDeJogo.currentTime = 0;
+                }
+                fimDeJogo.play();
                 clearInterval(intervaloNumero);
                 clearInterval(intervaloTempo);
                 btnPausar.disabled = true;
                 nivel.disabled = false;
                 btnParar.disabled = true;
-                nivel.value = "selecione";
                 numeroSorteado.style.color = "#fff";
                 numeroSorteado.innerHTML = `<strong>Fim de Jogo!</strong><br>`;
                 
                 salvarResultado();
+
+                nivel.value = "selecione";
             }
         }, 1000);
     });
@@ -125,6 +166,10 @@ window.addEventListener("DOMContentLoaded", function() {
         numeroSorteado.dataset.clicado = "true";
 
         if (numero % 2 === 0) {
+            if (!somAcerto.paused) {
+                somAcerto.currentTime = 0;
+            }
+            somAcerto.play();
             contagemAcertos++;
             acertos.textContent = contagemAcertos;
             numeroSorteado.style.color = "green";
@@ -141,6 +186,10 @@ window.addEventListener("DOMContentLoaded", function() {
                     break;
             }
         } else {
+            if (!somErro.paused) {
+                somErro.currentTime = 0;
+            }
+            somErro.play();
             contagemErros++;
             erros.textContent = contagemErros;
             numeroSorteado.style.color = "red";
@@ -162,6 +211,11 @@ window.addEventListener("DOMContentLoaded", function() {
     });
 
     btnPausar.addEventListener("click", function() {
+        if (!somPausar.paused) {
+            somPausar.currentTime = 0;
+        }
+        somPausar.play();
+
         clearInterval(intervaloNumero);
         clearInterval(intervaloTempo);
         jogoPausado = true;
@@ -171,6 +225,11 @@ window.addEventListener("DOMContentLoaded", function() {
     });
 
     btnParar.addEventListener("click", function() {
+        if (!somParar.paused) {
+            somParar.currentTime = 0;
+        }
+        somParar.play();
+
         btnIniciar.disabled = true;
         nivel.disabled = false;
         nivel.value = "selecione";
@@ -195,9 +254,21 @@ window.addEventListener("DOMContentLoaded", function() {
         percentualAcertos.textContent = '0.0%';
     });
 
-    btnRegras.addEventListener("click", mostrarRegras);
+    btnRegras.addEventListener("click", function(){
+        if (!somMenu.paused) {
+            somMenu.currentTime = 0;
+        }
+        somMenu.play();
+        mostrarRegras();
+    });
 
-    btnClassificacao.addEventListener("click", exibirClassificacao);
+    btnClassificacao.addEventListener("click", function(){
+        if (!somMenu.paused) {
+            somMenu.currentTime = 0;
+        }
+        somMenu.play();
+        exibirClassificacao();
+    });
 
     function formatarTempo(segundos) {
         var minutos = Math.floor(segundos / 60);
@@ -225,16 +296,20 @@ window.addEventListener("DOMContentLoaded", function() {
             "   - Nível Fácil: +2 pontos por acerto e -1 ponto por erro.\n" +
             "   - Nível Médio: +3 pontos por acerto e -1 ponto por erro.\n" +
             "   - Nível Difícil: +4 pontos por acerto e -2 pontos por erro.\n" +
-            "4. Quando o tempo acabar, a classificação será exibida.");
+            "4. Quando o tempo acabar, a classificação será exibida.\n" +
+            "5. A classificação é ordenada pela pontuação.");
     }
 
     function salvarResultado() {
         if (usuarioLogado) {
+            var dificuldade = nivel.value;
+    
             var resultado = {
                 nome: usuarioLogado,
                 pontos: pontos,
                 acertos: contagemAcertos,
-                erros: contagemErros
+                erros: contagemErros,
+                dificuldade: dificuldade
             };
     
             var resultados = JSON.parse(localStorage.getItem("resultados")) || [];
@@ -244,12 +319,6 @@ window.addEventListener("DOMContentLoaded", function() {
             resultados.sort((a, b) => b.pontos - a.pontos);
     
             localStorage.setItem("resultados", JSON.stringify(resultados));
-    
-            var resultadosTexto = resultados.map((r, index) => 
-                `#${index + 1} - Nome: ${r.nome}, Pontos: ${r.pontos}, Acertos: ${r.acertos}, Erros: ${r.erros}`
-            ).join("\n");
-    
-            alert(`Classificação:\n${resultadosTexto}`);
         }
     }
     
@@ -260,10 +329,10 @@ window.addEventListener("DOMContentLoaded", function() {
             alert("Ainda não há resultados registrados.");
         } else {
             var classificacao = resultados.map((r, index) => 
-                `#${index + 1} - Nome: ${r.nome}, Pontos: ${r.pontos}, Acertos: ${r.acertos}, Erros: ${r.erros}`
+                `${r.nome} - ${r.dificuldade} - PONTOS: ${r.pontos} - ACERTOS: ${r.acertos} - ERROS: ${r.erros}`
             ).join("\n");
     
-            alert(`Classificação:\n${classificacao}`);
+            alert(`CLASSIFICAÇÃO:\n${classificacao}`);
         }
-    }
+    }    
 });
