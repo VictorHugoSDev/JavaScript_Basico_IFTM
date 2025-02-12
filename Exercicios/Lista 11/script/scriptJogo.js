@@ -50,9 +50,9 @@ window.addEventListener("DOMContentLoaded", function() {
                 tempoNivel = 700;
                 break;
             case "dificil":
-                tempoInicial = 5;
+                tempoInicial = 45;
                 btnIniciar.disabled = false;
-                tempoNivel = 450;
+                tempoNivel = 500;
                 break;
             default:
                 tempoInicial = 0;
@@ -102,7 +102,7 @@ window.addEventListener("DOMContentLoaded", function() {
                 numeroSorteado.style.color = "#fff";
                 numeroSorteado.innerHTML = `<strong>Fim de Jogo!</strong><br>`;
                 
-                salvarClassificacao();
+                salvarResultado();
             }
         }, 1000);
     });
@@ -197,7 +197,7 @@ window.addEventListener("DOMContentLoaded", function() {
 
     btnRegras.addEventListener("click", mostrarRegras);
 
-    btnClassificacao.addEventListener("click", salvarClassificacao);
+    btnClassificacao.addEventListener("click", exibirClassificacao);
 
     function formatarTempo(segundos) {
         var minutos = Math.floor(segundos / 60);
@@ -217,30 +217,6 @@ window.addEventListener("DOMContentLoaded", function() {
         }
     }
 
-    function salvarClassificacao() {
-        if (usuarioLogado) {
-            var resultado = {
-                nome: usuarioLogado,
-                pontos: pontos,
-                acertos: contagemAcertos,
-                erros: contagemErros
-            };
-    
-            var resultados = JSON.parse(localStorage.getItem("resultados")) || [];
-            resultados.push(resultado);
-    
-            resultados.sort((a, b) => b.pontos - a.pontos);
-    
-            localStorage.setItem("resultados", JSON.stringify(resultados));
-    
-            var classificacaoTexto = resultados.map((r, index) => 
-                `#${index + 1} - Nome: ${r.nome}, Pontos: ${r.pontos}, Acertos: ${r.acertos}, Erros: ${r.erros}`
-            ).join("\n");
-    
-            alert(`Classificação:\n${classificacaoTexto}`);
-        }
-    }
-
     function mostrarRegras() {
         alert("Regras do Jogo:\n" +
             "1. O objetivo do jogo é clicar no número par.\n" +
@@ -250,5 +226,44 @@ window.addEventListener("DOMContentLoaded", function() {
             "   - Nível Médio: +3 pontos por acerto e -1 ponto por erro.\n" +
             "   - Nível Difícil: +4 pontos por acerto e -2 pontos por erro.\n" +
             "4. Quando o tempo acabar, a classificação será exibida.");
-    }    
+    }
+
+    function salvarResultado() {
+        if (usuarioLogado) {
+            var resultado = {
+                nome: usuarioLogado,
+                pontos: pontos,
+                acertos: contagemAcertos,
+                erros: contagemErros
+            };
+    
+            var resultados = JSON.parse(localStorage.getItem("resultados")) || [];
+    
+            resultados.push(resultado);
+    
+            resultados.sort((a, b) => b.pontos - a.pontos);
+    
+            localStorage.setItem("resultados", JSON.stringify(resultados));
+    
+            var resultadosTexto = resultados.map((r, index) => 
+                `#${index + 1} - Nome: ${r.nome}, Pontos: ${r.pontos}, Acertos: ${r.acertos}, Erros: ${r.erros}`
+            ).join("\n");
+    
+            alert(`Classificação:\n${resultadosTexto}`);
+        }
+    }
+    
+    function exibirClassificacao() {
+        var resultados = JSON.parse(localStorage.getItem("resultados")) || [];
+    
+        if (resultados.length === 0) {
+            alert("Ainda não há resultados registrados.");
+        } else {
+            var classificacao = resultados.map((r, index) => 
+                `#${index + 1} - Nome: ${r.nome}, Pontos: ${r.pontos}, Acertos: ${r.acertos}, Erros: ${r.erros}`
+            ).join("\n");
+    
+            alert(`Classificação:\n${classificacao}`);
+        }
+    }
 });
