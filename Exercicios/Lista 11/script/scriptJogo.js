@@ -81,7 +81,7 @@ window.addEventListener("DOMContentLoaded", function() {
                     somMenu.currentTime = 0;
                 }
                 somMenu.play();
-                tempoInicial = 5;
+                tempoInicial = 45;
                 btnIniciar.disabled = false;
                 tempoNivel = 500;
                 break;
