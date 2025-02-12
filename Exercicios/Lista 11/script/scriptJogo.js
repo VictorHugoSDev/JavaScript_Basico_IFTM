@@ -140,6 +140,7 @@ window.addEventListener("DOMContentLoaded", function() {
                 btnParar.disabled = true;
                 numeroSorteado.style.color = "#fff";
                 numeroSorteado.innerHTML = `<strong>Fim de Jogo!</strong><br>`;
+                numeroSorteado.style.fontSize = '80px';
                 
                 salvarResultado();
 
