@@ -9,6 +9,8 @@ window.addEventListener("DOMContentLoaded", function() {
     var percentualAcertos = document.getElementById("percentualAcertos");
     var erros = document.getElementById("erros");
     var pares = document.getElementById("pares");
+    var btnRegras = document.getElementById("btnRegras");
+    var btnClassificacao = document.getElementById("btnClassificacao");
 
     var intervaloNumero;
     var intervaloTempo;
@@ -48,7 +50,7 @@ window.addEventListener("DOMContentLoaded", function() {
                 tempoNivel = 700;
                 break;
             case "dificil":
-                tempoInicial = 45;
+                tempoInicial = 5;
                 btnIniciar.disabled = false;
                 tempoNivel = 450;
                 break;
@@ -95,11 +97,12 @@ window.addEventListener("DOMContentLoaded", function() {
                 clearInterval(intervaloTempo);
                 btnPausar.disabled = true;
                 nivel.disabled = false;
+                btnParar.disabled = true;
                 nivel.value = "selecione";
                 numeroSorteado.style.color = "#fff";
                 numeroSorteado.innerHTML = `<strong>Fim de Jogo!</strong><br>`;
-
-                salvarResultado();
+                
+                salvarClassificacao();
             }
         }, 1000);
     });
@@ -192,6 +195,10 @@ window.addEventListener("DOMContentLoaded", function() {
         percentualAcertos.textContent = '0.0%';
     });
 
+    btnRegras.addEventListener("click", mostrarRegras);
+
+    btnClassificacao.addEventListener("click", salvarClassificacao);
+
     function formatarTempo(segundos) {
         var minutos = Math.floor(segundos / 60);
         var segundosRestantes = segundos % 60;
@@ -210,7 +217,7 @@ window.addEventListener("DOMContentLoaded", function() {
         }
     }
 
-    function salvarResultado() {
+    function salvarClassificacao() {
         if (usuarioLogado) {
             var resultado = {
                 nome: usuarioLogado,
@@ -218,15 +225,30 @@ window.addEventListener("DOMContentLoaded", function() {
                 acertos: contagemAcertos,
                 erros: contagemErros
             };
-
+    
             var resultados = JSON.parse(localStorage.getItem("resultados")) || [];
-
             resultados.push(resultado);
-
+    
+            resultados.sort((a, b) => b.pontos - a.pontos);
+    
             localStorage.setItem("resultados", JSON.stringify(resultados));
-
-            var resultadosTexto = resultados.map(r => `Nome: ${r.nome}, Pontos: ${r.pontos}, Acertos: ${r.acertos}, Erros: ${r.erros}`).join("\n");
-            alert(`Resultados:\n\n${resultadosTexto}`);
+    
+            var classificacaoTexto = resultados.map((r, index) => 
+                `#${index + 1} - Nome: ${r.nome}, Pontos: ${r.pontos}, Acertos: ${r.acertos}, Erros: ${r.erros}`
+            ).join("\n");
+    
+            alert(`Classificação:\n${classificacaoTexto}`);
         }
     }
+
+    function mostrarRegras() {
+        alert("Regras do Jogo:\n" +
+            "1. O objetivo do jogo é clicar no número par.\n" +
+            "2. A cada acerto, você ganha pontos, e a cada erro, perde pontos.\n" +
+            "3. Você pode escolher o nível de dificuldade do jogo:\n" +
+            "   - Nível Fácil: +2 pontos por acerto e -1 ponto por erro.\n" +
+            "   - Nível Médio: +3 pontos por acerto e -1 ponto por erro.\n" +
+            "   - Nível Difícil: +4 pontos por acerto e -2 pontos por erro.\n" +
+            "4. Quando o tempo acabar, a classificação será exibida.");
+    }    
 });
