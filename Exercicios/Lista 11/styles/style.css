@@ -3,8 +3,6 @@ body {
     padding: 0;
     box-sizing: border-box;
     font-family: "Audiowide", serif;
-    font-weight: 400;
-    font-style: normal;
     display: flex;
     flex-direction: column;
     height: 100vh;
@@ -21,6 +19,7 @@ header {
     padding: 10px 20px;
     background-color: #004d40;
     border-radius: 0px 0px 10px 10px;
+    flex-wrap: wrap;
 }
 
 header div {
@@ -83,6 +82,7 @@ footer {
     padding: 20px;
     background-color: #00796b;
     border-radius: 10px 10px 0px 0px;
+    flex-wrap: wrap;
 }
 
 footer div {
@@ -199,7 +199,7 @@ button:disabled i {
     color: #f44336;
 }
 
-#cadastroError{
+#cadastroError {
     font-size: 16px;
     margin-top: 10px;
     padding: 10px;
@@ -220,4 +220,83 @@ button:disabled i {
     border-radius: 5px;
     text-align: center;
     display: block;
+}
+
+
+@media (max-width: 768px) {
+    body {
+        font-size: 18px;
+    }
+
+    header div p {
+        font-size: 24px;
+    }
+
+    select, button {
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    footer div p {
+        font-size: 16px;
+    }
+
+    main span {
+        font-size: 150px;
+    }
+
+    .login-container, .cadastro-container {
+        width: 280px;
+        padding: 15px;
+    }
+
+    .login-container h2, .cadastro-container h2 {
+        font-size: 24px;
+    }
+
+    .login-container input, .cadastro-container input {
+        font-size: 16px;
+    }
+
+    .login-container button, .cadastro-container button {
+        font-size: 16px;
+        padding: 10px 15px;
+    }
+
+    #loginError, #cadastroError {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    header div p {
+        font-size: 20px;
+    }
+
+    main span {
+        font-size: 120px;
+    }
+
+    .login-container, .cadastro-container {
+        width: 90%;
+        padding: 10px;
+    }
+
+    .login-container h2, .cadastro-container h2 {
+        font-size: 22px;
+    }
+
+    .login-container input, .cadastro-container input {
+        font-size: 14px;
+    }
+
+    .login-container button, .cadastro-container button {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+
+    footer {
+        flex-direction: column;
+        padding: 15px;
+    }
 }
