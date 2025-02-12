@@ -48,7 +48,7 @@ window.addEventListener("DOMContentLoaded", function() {
                 tempoNivel = 700;
                 break;
             case "dificil":
-                tempoInicial = 5;
+                tempoInicial = 45;
                 btnIniciar.disabled = false;
                 tempoNivel = 450;
                 break;
